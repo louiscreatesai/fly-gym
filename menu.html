@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fly Gym</title>
+<meta name="description" content="A simulated fruit fly doing gym stuff forever, with a live panel of real model spikes from the fly's whole nervous system.">
+<style>
+  :root { --bg:#090b13; --card:#12152a; --line:rgba(190,200,255,.12); --ink:#eef0ff; --dim:#8d93b5; --purple:#a78bfa; --pink:#f0abfc; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 'Segoe UI', system-ui, -apple-system, sans-serif; padding:40px 16px 60px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1 { margin:0 0 6px; font-size:34px; letter-spacing:.02em; }
+  .lead { color:var(--dim); margin:0 0 28px; max-width:760px; }
+  .lead b { color:var(--ink); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr)); gap:18px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px; display:flex; flex-direction:column; gap:12px; }
+  .num { font-size:12px; letter-spacing:.18em; color:var(--purple); font-weight:700; }
+  .card h2 { margin:0; font-size:22px; }
+  .blurb { color:#cfd3ee; margin:0; }
+  .brainline { color:var(--dim); font-size:14px; margin:0; }
+  .cap { background:#000; border-radius:10px; padding:14px; font-size:19px; font-weight:600; text-align:center; }
+  ol { margin:0; padding-left:20px; color:#cfd3ee; }
+  ol li { margin:3px 0; }
+  ol b { color:#fff; }
+  a.go { display:block; text-align:center; background:rgba(139,92,246,.28); border:1px solid rgba(167,139,250,.75); color:#f1eaff; text-decoration:none; font-weight:700; padding:12px; border-radius:10px; margin-top:auto; }
+  a.go:hover { background:rgba(139,92,246,.45); }
+  .box { margin-top:28px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px 20px; color:#cfd3ee; }
+  .box code { background:#1d2140; padding:2px 7px; border-radius:6px; color:#fff; }
+  .box a { color:var(--pink); }
+  h3 { margin:0 0 8px; font-size:15px; letter-spacing:.12em; text-transform:uppercase; color:var(--purple); }
+  .studio-only { display:none; }
+  body.studio .studio-only { display:block; }
+  body.studio .public-only { display:none; }
+  .credits { font-size:13px; color:var(--dim); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Fly Gym</h1>
+  <p class="lead public-only">A simulated fruit fly doing gym stuff, forever. The body is <b>NeuroMechFly</b>, a 3D model built from a real fly. The brain panel replays <b>real model spikes</b> from a simulation of the fly's whole nervous system (the MaleCNS connectome, 166,700 neurons). Open one and press <b>Brain</b> on a phone, or look right on a computer.</p>
+  <p class="lead studio-only">Studio mode (only on this PC). Open a video, press <b>F</b> for full screen and <b>R</b> to start the loop, then film the monitor with your phone in portrait.</p>
+  <div class="grid" id="grid"></div>
+  <div class="box">
+    <h3>Controls</h3>
+    Buttons on the workout card switch cameras, pause and restart. Drag to rotate. On a keyboard: <code>R</code> restart · <code>1</code> <code>2</code> <code>3</code> cameras · <code>Space</code> pause · <code>F</code> full screen · <code>H</code> hide the panels · <code>C</code> pop-up labels on/off · <code>P</code> fps<span class="studio-only" style="display:inline"> · <code>G</code> phone framing guide</span>
+  </div>
+  <div class="box studio-only">
+    <h3>Filming</h3>
+    <ol>
+      <li>Full screen (F), lights low, phone about 30 to 40 cm from the monitor, portrait, the fly strip filling the frame (G shows the two phone frames).</li>
+      <li>Press R, start recording on the fly. Pan right to the brain panel at the time on the card, hold 2 s, pan back.</li>
+      <li>In Instagram: the caption in the white Classic font, centred. Sound: <b>Nostalgicore · File Select 64</b>.</li>
+    </ol>
+  </div>
+  <div class="box credits public-only">
+    <h3>How it works</h3>
+    Every flash, count and bar in the brain panel comes from one trial of a real simulation run: a leaky integrate-and-fire model of every neuron in the fly's brain and nerve cord, wired by the connectome, replayed at 0.35x speed and labelled with exactly which neurons were stimulated. It is a model, not a living fly. The gym numbers are jokes.
+    <br><br>
+    Body: NeuroMechFly v2 via flygym (Apache-2.0). Connectome: Janelia MaleCNS v1.0 (CC BY 4.0). Model: Shiu et al. 2024. 3D: three.js (MIT).
+    <br>Code: <a href="https://github.com/louiscreatesai/fly-gym">github.com/louiscreatesai/fly-gym</a>
+  </div>
+</div>
+<script>
+const STUDIO = ['localhost', '127.0.0.1'].includes(location.hostname) || new URLSearchParams(location.search).has('studio');
+document.body.classList.toggle('studio', STUDIO);
+const VIDEOS = [
+  { scene: 'legday', title: 'Leg day', blurb: 'The fly has six legs, so leg day is triple leg day. It leg-presses with all six while the plates keep stacking.',
+    brain: 'Brain: descending neurons MDN + DNb05 + DNa03 driven, watch all three leg pairs light up in the nerve cord.',
+    caption: 'I made the fly do leg day for eternity', guide: [
+    '<b>0 s</b> press R. Film the fly: it presses with all six legs, a plate lands each rep',
+    '<b>2.6 s</b> the horns are full, a plate tower starts growing on top',
+    '<b>3.5 s</b> pan right to the brain panel (all three leg pairs glow gold)',
+    '<b>5.5 s</b> pan back: the tower is huge',
+    '<b>6.4 s</b> the floor cracks under it, the rails bend',
+    '<b>7.4 to 8.2 s</b> one more trembling rep, stop around 8.5 s (loop 9.6 s)',
+    'Key 2 = the face view with six legs pressing overhead, great as a second take',
+  ] },
+  { scene: 'sisyphus', title: 'Sisyphus', blurb: 'It pushes a sugar cube uphill. It never reaches the top. Flies taste with their feet, so it can taste the sugar the whole time.',
+    brain: 'Brain: sugar taste neurons driven, watch MN9, the feeding motor neuron, fire ("wants to eat").',
+    caption: 'I made the fly push a sugar cube uphill for eternity', guide: [
+    '<b>0 s</b> press R. Film the fly: cube almost at the SUMMIT, fly straining (it tastes the sugar with its feet)',
+    '<b>1.9 s</b> ALMOST: the cube is on top, the fly reaches for it with its mouth',
+    '<b>2.0 to 2.9 s</b> it tips back and bounces all the way down, ATTEMPT counter +1',
+    '<b>3.5 s</b> pan right to the brain panel (the real sugar pathway: sugar taste to MN9, "Wants to eat")',
+    '<b>5.5 s</b> pan back: pushing uphill again',
+    '<b>6.1 s</b> it slips, a hind leg catches it, stop around 8 s (loop 9 s)',
+  ] },
+  { scene: 'preworkout', title: 'Pre-workout', blurb: 'One dry scoop and the treadmill never stops speeding up.',
+    brain: 'Brain: P9 walking neurons driven harder with every speed step (40 to 320 Hz). No caffeine is modeled.',
+    caption: 'I gave the fly pre-workout for eternity', guide: [
+    '<b>0 s</b> press R. Film the fly: it dry-scoops the pink powder, eyes glow, 4 → 25 mph',
+    '<b>2.6 s</b> 120 mph, wings start buzzing',
+    '<b>3.5 s</b> pan right to the brain panel (walking neurons at 320 Hz, the busiest clip)',
+    '<b>5.5 s</b> pan back: the belt is red-hot, sparks, readout says Err',
+    '<b>6.6 s</b> the belt snaps, the fly keeps running on air',
+    '<b>8.2 s</b> stop on the white flash (or at 9 s for a clean loop)',
+  ] },
+];
+const grid = document.getElementById('grid');
+VIDEOS.forEach((v, i) => {
+  const el = document.createElement('div');
+  el.className = 'card';
+  el.innerHTML = `<div class="num">${STUDIO ? 'VIDEO' : 'SCENE'} ${i + 1}</div><h2>${v.title}</h2>
+    <p class="blurb">${v.blurb}</p>
+    <p class="brainline">${v.brain}</p>
+    ${STUDIO ? `<div class="cap">${v.caption}</div><ol>${v.guide.map(g => `<li>${g}</li>`).join('')}</ol>` : ''}
+    <a class="go" href="index.html?scene=${v.scene}">Open ${v.title}</a>`;
+  grid.appendChild(el);
+});
+</script>
+</body>
+</html>

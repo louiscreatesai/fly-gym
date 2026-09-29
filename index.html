@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fly Gym</title>
+<script>if (!new URLSearchParams(location.search).get('scene')) location.replace('menu.html');</script>
+<link rel="stylesheet" href="./style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three/three.module.js", "three/addons/": "./vendor/three/addons/" } }
+</script>
+</head>
+<body>
+<canvas id="stage"></canvas>
+<div id="hud"></div>
+<aside id="brain"></aside>
+<div class="guide" id="guideA"><span>phone frame 1 · fly</span></div>
+<div class="guide" id="guideB"><span>phone frame 2 · brain</span></div>
+<div id="loading">LOADING FLY…</div>
+<div id="fps"></div>
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>

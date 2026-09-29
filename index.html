@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fly Gym</title>
-<script>if (!new URLSearchParams(location.search).get('scene')) location.replace('menu.html');</script>
+<script src="./js/filecheck.js"></script>
+<script>if (location.protocol !== 'file:' && !new URLSearchParams(location.search).get('scene')) location.replace('menu.html');</script>
 <link rel="stylesheet" href="./style.css">
 <script type="importmap">
 { "imports": { "three": "./vendor/three/three.module.js", "three/addons/": "./vendor/three/addons/" } }

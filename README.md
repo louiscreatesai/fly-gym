@@ -15,15 +15,14 @@ It works on a phone too. Tap **Brain** to open the brain panel.
 
 ## Run it yourself
 
-It is a static web page, so there is no install and no build step. You only need Python (or any static file server):
+It is a static web page, so there is no install and no build step. You only need Python.
 
-```
-git clone https://github.com/louiscreatesai/fly-gym.git
-cd fly-gym
-python -m http.server 8000
-```
+1. Download the repo (green **Code** button, then **Download ZIP**, and unzip it) or run `git clone https://github.com/louiscreatesai/fly-gym.git`.
+2. Double-click **Start Fly Gym.bat** on Windows, or **start.command** on Mac. It serves the folder on http://localhost:5600 and opens it in your browser.
 
-Then open http://localhost:8000. Opening index.html straight from disk will not work: browsers block the module and data loading on `file://`.
+Or do it by hand: `python -m http.server 8000` in the folder, then open http://localhost:8000.
+
+Don't double-click index.html itself: browsers block 3D pages opened straight from a folder. If you do, the page tells you what to do instead.
 
 Controls: the buttons on the workout card switch cameras, pause and restart. Drag to rotate. On a keyboard: `R` restarts, `1` `2` `3` switch cameras, `Space` pauses, `F` goes full screen, `H` hides the panels, `C` toggles the pop-up labels and `P` shows the fps.
 

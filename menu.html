@@ -32,6 +32,8 @@
   .studio-only { display:none; }
   body.studio .studio-only { display:block; }
   body.studio .public-only { display:none; }
+  .studio-inline { display:none; }
+  body.studio .studio-inline { display:inline; }
   .credits { font-size:13px; color:var(--dim); }
 </style>
 </head>
@@ -43,7 +45,7 @@
   <div class="grid" id="grid"></div>
   <div class="box">
     <h3>Controls</h3>
-    Buttons on the workout card switch cameras, pause and restart. Drag to rotate. On a keyboard: <code>R</code> restart · <code>1</code> <code>2</code> <code>3</code> cameras · <code>Space</code> pause · <code>F</code> full screen · <code>H</code> hide the panels · <code>C</code> pop-up labels on/off · <code>P</code> fps<span class="studio-only" style="display:inline"> · <code>G</code> phone framing guide</span>
+    Buttons on the workout card switch cameras, pause and restart. Drag to rotate. On a keyboard: <code>R</code> restart · <code>1</code> <code>2</code> <code>3</code> cameras · <code>Space</code> pause · <code>F</code> full screen · <code>H</code> hide the panels · <code>C</code> pop-up labels on/off · <code>P</code> fps<span class="studio-inline"> · <code>G</code> phone framing guide</span>
   </div>
   <div class="box studio-only">
     <h3>Filming</h3>

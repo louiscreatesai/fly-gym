@@ -1,0 +1,340 @@
+{
+ "mapping": "Sugar taste neurons (60 labellar sugar GRNs) fire at a constant 150 Hz (the win tastes sweet), bitter taste neurons (38 labellar bitter GRNs) at round(150 x (total - 2) / 19) Hz for the fly's own hand total (the risk tastes bitter: total 2 -> 0 Hz, 21 -> 150 Hz), and the fly hits if its MN9_L feeding motor neuron fires at more than 50% of its sugar-only rate, otherwise it stands. Fixed before any run.",
+ "readout": "MN9_L",
+ "baseline_mn9_hz": 90.5,
+ "baseline_trials": [
+  86.0,
+  85.0,
+  98.0,
+  91.0,
+  83.0,
+  98.0,
+  94.0,
+  89.0
+ ],
+ "baseline_run": "malecns_bj_sugar_only",
+ "threshold_hz": 45.25,
+ "totals": {
+  "4": {
+   "bitter_hz": 16,
+   "mn9_hz": 50.0,
+   "mn9_trials": [
+    61.0,
+    44.0,
+    45.0
+   ],
+   "decision": "HIT",
+   "trial_decisions": [
+    "HIT",
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 145.5,
+   "bitter_grn_hz": 19.3,
+   "clip": "t04",
+   "run": "malecns_bj_total04"
+  },
+  "5": {
+   "bitter_hz": 24,
+   "mn9_hz": 23.0,
+   "mn9_trials": [
+    23.0,
+    23.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 29.3,
+   "clip": "t05",
+   "run": "malecns_bj_total05"
+  },
+  "6": {
+   "bitter_hz": 32,
+   "mn9_hz": 5.0,
+   "mn9_trials": [
+    1.0,
+    9.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 38.2,
+   "clip": "t06",
+   "run": "malecns_bj_total06"
+  },
+  "7": {
+   "bitter_hz": 39,
+   "mn9_hz": 1.5,
+   "mn9_trials": [
+    0.0,
+    3.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 45.6,
+   "clip": "t07",
+   "run": "malecns_bj_total07"
+  },
+  "8": {
+   "bitter_hz": 47,
+   "mn9_hz": 1.0,
+   "mn9_trials": [
+    1.0,
+    1.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 53.8,
+   "clip": "t08",
+   "run": "malecns_bj_total08"
+  },
+  "9": {
+   "bitter_hz": 55,
+   "mn9_hz": 1.5,
+   "mn9_trials": [
+    0.0,
+    3.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 63.3,
+   "clip": "t09",
+   "run": "malecns_bj_total09"
+  },
+  "10": {
+   "bitter_hz": 63,
+   "mn9_hz": 0.0,
+   "mn9_trials": [
+    0.0,
+    0.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 71.4,
+   "clip": "t10",
+   "run": "malecns_bj_total10"
+  },
+  "11": {
+   "bitter_hz": 71,
+   "mn9_hz": 0.0,
+   "mn9_trials": [
+    0.0,
+    0.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 79.4,
+   "clip": "t11",
+   "run": "malecns_bj_total11"
+  },
+  "12": {
+   "bitter_hz": 79,
+   "mn9_hz": 0.0,
+   "mn9_trials": [
+    0.0,
+    0.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 87.7,
+   "clip": "t12",
+   "run": "malecns_bj_total12"
+  },
+  "13": {
+   "bitter_hz": 87,
+   "mn9_hz": 0.0,
+   "mn9_trials": [
+    0.0,
+    0.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 95.6,
+   "clip": "t13",
+   "run": "malecns_bj_total13"
+  },
+  "14": {
+   "bitter_hz": 95,
+   "mn9_hz": 0.0,
+   "mn9_trials": [
+    0.0,
+    0.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 103.6,
+   "clip": "t14",
+   "run": "malecns_bj_total14"
+  },
+  "15": {
+   "bitter_hz": 103,
+   "mn9_hz": 0.0,
+   "mn9_trials": [
+    0.0,
+    0.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 111.4,
+   "clip": "t15",
+   "run": "malecns_bj_total15"
+  },
+  "16": {
+   "bitter_hz": 111,
+   "mn9_hz": 0.0,
+   "mn9_trials": [
+    0.0,
+    0.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 119.9,
+   "clip": "t16",
+   "run": "malecns_bj_total16"
+  },
+  "17": {
+   "bitter_hz": 118,
+   "mn9_hz": 0.0,
+   "mn9_trials": [
+    0.0,
+    0.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 126.8,
+   "clip": "t17",
+   "run": "malecns_bj_total17"
+  },
+  "18": {
+   "bitter_hz": 126,
+   "mn9_hz": 0.0,
+   "mn9_trials": [
+    0.0,
+    0.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 134.6,
+   "clip": "t18",
+   "run": "malecns_bj_total18"
+  },
+  "19": {
+   "bitter_hz": 134,
+   "mn9_hz": 0.0,
+   "mn9_trials": [
+    0.0,
+    0.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 142.6,
+   "clip": "t19",
+   "run": "malecns_bj_total19"
+  },
+  "20": {
+   "bitter_hz": 142,
+   "mn9_hz": 0.0,
+   "mn9_trials": [
+    0.0,
+    0.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 150.9,
+   "clip": "t20",
+   "run": "malecns_bj_total20"
+  },
+  "21": {
+   "bitter_hz": 150,
+   "mn9_hz": 0.0,
+   "mn9_trials": [
+    0.0,
+    0.0
+   ],
+   "decision": "STAND",
+   "trial_decisions": [
+    "STAND",
+    "STAND"
+   ],
+   "sugar_grn_hz": 144.8,
+   "bitter_grn_hz": 158.9,
+   "clip": "t21",
+   "run": "malecns_bj_total21"
+  }
+ },
+ "stand_from": 5,
+ "monotonic": true,
+ "model": "Shiu et al. 2024 LIF model on Janelia MaleCNS v1.0 (CC BY 4.0), 1000 ms trials, seed 0, engine\\runs\\malecns_bj_*",
+ "notes": [
+  "the fly only knows its own total, not the dealer's card (and not soft vs hard: an ace hand is just its total)",
+  "baseline: sugar alone 150 Hz, MN9_L 90.5 Hz over 8 trials (86 / 85 / 98 / 91 / 83 / 98 / 94 / 89); threshold = half of it, 45.25 Hz",
+  "decision uses the mean over the run's trials (2 per total, 3 where the first 2 disagreed); each brain-panel clip replays trial 0 of that run",
+  "total 4 sits on the line: MN9_L 61 / 44 / 45 Hz in 3 trials, mean 50.00 Hz vs 45.25 Hz, so HIT by the rule (1 of 3 single trials agree)",
+  "MN9_L is the readout because MaleCNS MN9_R is only partly traced (silent in this model)",
+  "the bitter veto is steep in this model: bitter 16 Hz (total 4) already pulls MN9_L from 90.5 to 50 Hz; from total 10 (bitter 63 Hz) MN9_L is silent in every trial",
+  "with sugar alone MN9_L starts 33-45 ms after taste onset, before the antennal-lobe runaway (54-341 ms), so the call rides on the taste pathway",
+  "the antennal-lobe runaway never took hold in 2 of 37 trials: total 7 trial 0 (clip t07): 699 active neurons; total 16 trial 1: 906 active neurons (the others: 7,945-9,007); each of those trials gives the same call as its total"
+ ]
+}

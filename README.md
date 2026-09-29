@@ -11,6 +11,7 @@ It works on a phone too. Tap **Brain** to open the brain panel.
 | Leg day | The fly has six legs, so leg day is triple leg day. It leg-presses with all six while the plates keep stacking. | Descending neurons MDN + DNb05 + DNa03 driven at 300 Hz. All three leg pairs light up in the nerve cord. |
 | Sisyphus | It pushes a sugar cube uphill and never reaches the top. Flies taste with their feet, so it tastes the sugar the whole time. | Sugar taste neurons driven at 150 Hz. MN9, the feeding motor neuron, fires. |
 | Pre-workout | One dry scoop and the treadmill never stops speeding up. | P9 walking neurons driven at 40, 80, 160 and 320 Hz as the speed climbs. No caffeine is modeled. |
+| Blackjack | The fly brain makes every hit or stand call. | Sugar taste neurons at 150 Hz (the win) plus bitter taste neurons at a rate that grows with the hand total (the risk). If MN9, the feeding motor neuron, still fires above half its sugar-only rate, the fly hits. The rule was fixed before any run. The result: it only hits on 4 and stands on everything from 5 to 21. |
 
 ## Run it yourself
 
